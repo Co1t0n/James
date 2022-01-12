@@ -58,7 +58,58 @@
 
   </div>
 </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<h2>Hoverable Dropdown</h2>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">AddTokens (BLooket)</button>
+  <div class="dropdown-content">
+   <p> Addtokens: (copy/paste)
+nnot%20bypass%20it.%20Do%20not%20mess%20with%0A%2F%2F%20%20with%20this%20file%20if%20you%20do%20not%20know%20what%20you%20are%20doing!!!%0A%2F%2F%0A%0A%0Aasync%20function%20getName(authToken)%20%7B%0A%20%20%20%20const%20response%20%3D%20await%20fetch('https%3A%2F%2Fapi.blooket.com%2Fapi%2Fusers%2Fverify-token%3Ftoken%3DJWT%2B'%20%2B%20authToken)%3B%0A%20%20%20%20const%20data%20%3D%20await%20response.json()%3B%0A%0A%20%20%20%20return%20data.name%0A%7D%3B%0A%0Aasync%20function%20addCurrencies()%20%7B%0A%20%20%20%20const%20tokens%20%3D%20Number(prompt('How%20many%20tokens%20do%20you%20want%20to%20add%20to%20your%20account%3F%20(500%20daily)'))%3B%0A%20%20%20%20const%20myToken%20%3D%20localStorage.token.split('JWT%20')%5B1%5D%3B%0A%0A%20%20%20%20if%20(tokens%20%3E%20500)%20%7B%0A%20%20%20%20%20%20%20%20alert('You%20can%20only%20add%20up%20to%20500%20tokens%20daily.')%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20response%20%3D%20await%20fetch('https%3A%2F%2Fapi.blooket.com%2Fapi%2Fusers%2Fadd-rewards'%2C%20%7B%0A%20%20%20%20%20%20%20%20method%3A%20%22PUT%22%2C%0A%20%20%20%20%20%20%20%20headers%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22referer%22%3A%20%22https%3A%2F%2Fwww.blooket.com%2F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22content-type%22%3A%20%22application%2Fjson%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22authorization%22%3A%20localStorage.token%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20body%3A%20JSON.stringify(%7B%0Ajavascript:(function()%7B%2F%2F%20%20--%3E%20PLEASE%20READ%20THIS!!!%20%3C---%0A%2F%2F%20%20%0A%2F%2F%20%20Do%20not%20change%20the%20numbers%20in%20this%20file!%20Blooket%20has%20a%20hard%20limit%20on%20how%20many%20tokens%0A%2F%2F%20%20you%20can%20add%20everyday.%20The%20limit%20is%20500%20and%20you%20ca%20%20%20%20%20%20%20%20%20%20%20%20addedTokens%3A%20tokens%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20addedXp%3A%20300%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20name%3A%20await%20getName(myToken)%0A%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%7D)%3B%0A%0A%20%20%20%20if%20(response.status%20%3D%3D%20200)%20%7B%0A%20%20%20%20%20%20%20%20alert(%60%24%7Btokens%7D%20tokens%20and%20300%20XP%20added%20to%20your%20account!%60)%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20alert('An%20error%20occured.')%3B%0A%20%20%20%20%7D%3B%0A%0A%7D%3B%0A%0AaddCurrencies()%3B%7D)()%3B
+
+    </p>
+  </div>
+</div>
 </body>
 </html>
 
